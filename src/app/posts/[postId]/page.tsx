@@ -7,22 +7,17 @@ type Props = {
   };
 };
 
-// export const generateMetadata = async ({
-//   params,
-// }: Props): Promise<Metadata> => {
-//   const title = await new Promise((resolve) => {
-//     setTimeout(() => {
-//       resolve(`PostId ${params.postId}`);
-//     }, 100);
-//   });
-//   return {
-//     title: `PostId${title}`,
-//   };
-// };
-export const metadata: Metadata = {
-  title: {
-    absolute: "Post1",
-  },
+export const generateMetadata = async ({
+  params,
+}: Props): Promise<Metadata> => {
+  const title = await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(`PostId ${params.postId}`);
+    }, 100);
+  });
+  return {
+    title: `PostId${title}`,
+  };
 };
 
 function Post({ params }: Props) {
