@@ -1,6 +1,10 @@
 import React from "react";
 import { notFound } from "next/navigation";
 
+function genRandomInt(count: number) {
+  return Math.floor(Math.random() * count);
+}
+
 function Comment({
   params,
 }: {
@@ -9,6 +13,11 @@ function Comment({
     postId: string;
   };
 }) {
+  const random = genRandomInt(2);
+  console.log(random);
+  if (random === 1) {
+    throw new Error("Error loading comments");
+  }
   if (parseInt(params.commentID) > 1000) {
     notFound();
   }
