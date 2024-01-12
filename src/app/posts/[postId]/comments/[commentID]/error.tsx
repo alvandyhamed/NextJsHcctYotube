@@ -1,12 +1,14 @@
 "use client";
 import React from "react";
 
-function error() {
+function ErrorBoundary({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div>
-      <h1>We have Comments Error</h1>
+      <h1>
+        {error.message} <button onClick={reset}>Try again</button>
+      </h1>
     </div>
   );
 }
 
-export default error;
+export default ErrorBoundary;
