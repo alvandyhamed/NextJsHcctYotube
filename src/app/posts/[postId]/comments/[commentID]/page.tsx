@@ -14,11 +14,11 @@ function Comment({
     postId: string;
   };
 }) {
-  const random = genRandomInt(2);
-  console.log(random);
-  if (random === 1) {
-    throw new Error("Error loading comments");
-  }
+  // const random = genRandomInt(2);
+  // console.log(random);
+  // if (random === 1) {
+  //   throw new Error("Error loading comments");
+  // }
   if (parseInt(params.commentID) > 1000) {
     notFound();
   }
