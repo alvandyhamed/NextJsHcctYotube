@@ -1,18 +1,21 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 function DashboardLayout({
   children,
   users,
   payments,
   comments,
+  login,
 }: {
   children: React.ReactNode;
 
   users: React.ReactNode;
   payments: React.ReactNode;
   comments: React.ReactNode;
+  login: ReactNode;
 }) {
-  return (
+  const isLoggedIn = false;
+  return isLoggedIn ? (
     <div>
       <div>{children}</div>
       <div style={{ display: "flex" }}>
@@ -23,6 +26,8 @@ function DashboardLayout({
         <div style={{ display: "flex", flex: 1 }}>{comments}</div>
       </div>
     </div>
+  ) : (
+    <div>{login}</div>
   );
 }
 
